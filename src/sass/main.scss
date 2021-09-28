@@ -1,0 +1,19 @@
+@import "./abstracts/mixins";
+@import "./abstracts/variables";
+@import "./abstracts/functions";
+
+@import "./base/icons";
+@import "./base/reset";
+@import "./base/typography";
+
+@import "./components/buttons";
+@import "./components/avatar";
+@import "./components/biography";
+@import "./components/info";
+@import "./components/contacts";
+@import "./components/profile";
+
+@import "./layout/sidebar";
+@import "./layout/main";
+
+@import "./pages/home.scss";

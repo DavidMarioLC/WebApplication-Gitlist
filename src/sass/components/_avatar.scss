@@ -1,0 +1,38 @@
+.avatar {
+  display: flex;
+  gap: rem(16);
+}
+
+.avatar__image {
+  grid-area: avatar-image;
+
+  height: rem(80);
+  width: rem(80);
+
+  border-radius: 50%;
+  overflow: hidden;
+
+  border: 1px solid $color-border;
+
+  img {
+    max-width: 100%;
+  }
+}
+
+.avatar__fullname {
+  grid-area: fullname;
+  font: $headline1;
+  color: $white;
+}
+
+.avatar__username {
+  grid-area: username;
+  font: $headline2-ligth;
+  color: $grey-2;
+}
+
+@media screen and(min-width: 768px) {
+  .avatar {
+    flex-direction: column;
+  }
+}

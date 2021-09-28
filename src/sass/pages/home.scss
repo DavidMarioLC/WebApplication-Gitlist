@@ -1,0 +1,23 @@
+.home {
+  display: grid;
+  max-width: 1300px;
+  margin: 0 auto;
+  height: 100vh;
+  grid-template-columns: 1fr;
+  grid-template-areas: "sidebar" "main";
+}
+
+.home .sidebar {
+  grid-area: sidebar;
+}
+
+.home .main {
+  grid-area: main;
+}
+
+@media screen and (min-width: 768px) {
+  .home {
+    grid-template-columns: 1fr 3fr;
+    grid-template-areas: "sidebar main";
+  }
+}

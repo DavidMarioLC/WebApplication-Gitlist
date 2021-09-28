@@ -1,0 +1,14 @@
+.contacts {
+  display: flex;
+  flex-direction: column;
+  gap: rem(16);
+}
+
+.contacts__link {
+  display: flex;
+  align-items: center;
+  gap: rem(8);
+
+  font: $body2-regular;
+  color: $grey-2;
+}

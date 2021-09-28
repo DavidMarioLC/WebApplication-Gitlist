@@ -1,0 +1,55 @@
+$primary: #57a6ff;
+$white: #fffffe;
+$black: #141414;
+$grey: #8b949e;
+$bg: #0d1117;
+$button: #22262c;
+$grey-2: #c5ced7;
+$pink: #cc68a0;
+$yellow: #f1e05a;
+$purple: #563d7c;
+$black-2: #171b21;
+$color-border: #30363d;
+$font: Inter;
+
+$headline1: 600 1.625rem/2rem $font;
+$button-text: 500 0.875rem/1.5rem $font;
+$headline2-semi-bold: 600 1.25rem/1.5rem $font;
+$headline2-ligth: 200 1.25rem/1.5rem $font;
+$body1-regular: 400 1rem/1.5rem $font;
+$body1-semi-bold: 700 1rem/1.5rem $font;
+$body2-regular: 400 0.875rem/1.5rem $font;
+$body2-semi-bold: 600 0.875rem/1.5rem $font;
+$caption-regular: 400 0.75rem/1.125rem $font;
+$caption-medium: 500 0.75rem/1.125rem $font;
+
+:root {
+  --primary: #{$primary};
+  --white: #{$white};
+  --black: #{$black};
+  --grey: #{$grey};
+  --bg: #{$bg};
+  --button: #{$button};
+  --grey-2: #{$grey-2};
+  --pink: #{$pink};
+  --yellow: #{$yellow};
+  --purple: #{$purple};
+  --black-2: #{$black-2};
+  --headline1: #{$headline1};
+  --button-text: #{$button-text};
+  --color-border: #{$color-border};
+  --headline2-semi-bold: #{$headline2-semi-bold};
+  --headline2-ligth: #{$headline2-ligth};
+  --body1-regular: #{$body1-regular};
+  --body1-semi-bold: #{$body1-semi-bold};
+  --body2-regular: #{$body2-regular};
+  --body2-semi-bold: #{$body2-semi-bold};
+  --caption-regular: #{$caption-regular};
+  --caption-medium: #{$caption-medium};
+}
+
+body {
+  color: $primary;
+  font: $body2-regular;
+  background-color: $bg;
+}

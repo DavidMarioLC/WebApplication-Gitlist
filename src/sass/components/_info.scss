@@ -1,0 +1,19 @@
+.info {
+  display: flex;
+  gap: rem(8);
+  color: $white;
+}
+
+.info__link {
+  color: $grey-2;
+}
+
+.info__link i {
+  color: $grey;
+  font: $body2-semi-bold;
+}
+
+.info__link span {
+  color: $grey-2;
+  font: $body2-semi-bold;
+}
