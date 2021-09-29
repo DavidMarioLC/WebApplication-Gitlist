@@ -6,16 +6,12 @@
 .avatar__image {
   grid-area: avatar-image;
 
-  height: rem(80);
-  width: rem(80);
-
-  border-radius: 50%;
-  overflow: hidden;
-
-  border: 1px solid $color-border;
-
   img {
-    max-width: 100%;
+    height: rem(80);
+    width: rem(80);
+
+    border: 1px solid $color-border;
+    border-radius: 50%;
   }
 }
 
@@ -34,5 +30,12 @@
 @media screen and(min-width: 768px) {
   .avatar {
     flex-direction: column;
+  }
+
+  .avatar__image {
+    img {
+      width: 100%;
+      height: auto;
+    }
   }
 }

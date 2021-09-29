@@ -1,19 +1,30 @@
 .info {
   display: flex;
+
   gap: rem(8);
   color: $white;
 }
 
 .info__link {
+  display: flex;
+  align-items: center;
+  gap: rem(4);
   color: $grey-2;
+
+  &:hover {
+    color: $primary;
+  }
 }
 
-.info__link i {
-  color: $grey;
+.info__value {
   font: $body2-semi-bold;
 }
 
-.info__link span {
+.info__link:not(:first-child)::before {
+  content: "•";
   color: $grey-2;
-  font: $body2-semi-bold;
+}
+
+.info__link:hover {
+  color: $primary;
 }

@@ -9,18 +9,29 @@
 }
 
 .btn--text {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: rem(14);
 }
 
 .btn--icon {
+}
+
+.btn--icon i {
+  padding-right: rem(4);
+  color: $grey-2;
+  vertical-align: middle;
 }
 
 .btn--text,
-.btn--icon {
+.btn--icon,
+.btn--star {
   font: $button-text;
   background: $button;
-  padding: rem(4) rem(24);
-  border: 1px solid $button;
   color: $white;
+  padding: rem(8) rem(16);
+  border: 1px solid $color-border;
   transition: 0.1s cubic-bezier(0.3, 0, 0.5, 1);
 
   &:hover {
@@ -28,12 +39,6 @@
   }
 }
 
-.btn--icon i {
-  color: $pink;
-  padding-right: rem(4);
-  font-size: rem(24);
-  vertical-align: middle;
-}
-
-.btn--start {
+.btn--star {
+  padding: rem(2) rem(16);
 }

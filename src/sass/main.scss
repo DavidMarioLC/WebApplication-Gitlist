@@ -6,14 +6,21 @@
 @import "./base/reset";
 @import "./base/typography";
 
+@import "./components/tag";
 @import "./components/buttons";
+@import "./components/links";
 @import "./components/avatar";
 @import "./components/biography";
 @import "./components/info";
 @import "./components/contacts";
 @import "./components/profile";
+@import "./components/actions";
+@import "./components/search";
+@import "./components/selectGroup";
+@import "./components/repository";
 
 @import "./layout/sidebar";
 @import "./layout/main";
+@import "./layout/repositories";
 
 @import "./pages/home.scss";

@@ -1,7 +1,11 @@
 $primary: #57a6ff;
+$blue: #1f6feb;
+$focus: #1f6feb;
+$tag: #15223a;
 $white: #fffffe;
 $black: #141414;
 $grey: #8b949e;
+
 $bg: #0d1117;
 $button: #22262c;
 $grey-2: #c5ced7;
@@ -13,18 +17,20 @@ $color-border: #30363d;
 $font: Inter;
 
 $headline1: 600 1.625rem/2rem $font;
-$button-text: 500 0.875rem/1.5rem $font;
+$button-text: 500 0.8rem/1.5rem $font;
 $headline2-semi-bold: 600 1.25rem/1.5rem $font;
 $headline2-ligth: 200 1.25rem/1.5rem $font;
 $body1-regular: 400 1rem/1.5rem $font;
 $body1-semi-bold: 700 1rem/1.5rem $font;
 $body2-regular: 400 0.875rem/1.5rem $font;
 $body2-semi-bold: 600 0.875rem/1.5rem $font;
-$caption-regular: 400 0.75rem/1.125rem $font;
+$caption-regular: 500 0.75rem/1.125rem $font;
 $caption-medium: 500 0.75rem/1.125rem $font;
 
 :root {
   --primary: #{$primary};
+  --focus: #{$focus};
+  --tag: #{$tag};
   --white: #{$white};
   --black: #{$black};
   --grey: #{$grey};

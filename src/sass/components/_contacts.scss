@@ -1,14 +1,25 @@
 .contacts {
   display: flex;
   flex-direction: column;
-  gap: rem(16);
+  gap: rem(4);
 }
 
-.contacts__link {
+.contacts__item {
   display: flex;
   align-items: center;
   gap: rem(8);
-
   font: $body2-regular;
   color: $grey-2;
+}
+
+.contacts__item [class^="icon-"] {
+  color: $grey;
+}
+
+.contacts__link {
+  color: $grey-2;
+  &:hover {
+    color: $primary;
+    text-decoration: underline;
+  }
 }

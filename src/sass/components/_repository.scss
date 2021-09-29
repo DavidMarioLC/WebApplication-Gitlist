@@ -1,0 +1,59 @@
+.repository {
+  display: flex;
+  justify-content: space-between;
+
+  align-items: start;
+  padding: rem(24) 0;
+  gap: rem(16);
+  flex-direction: column;
+  border-bottom: 1px solid $color-border;
+}
+
+.repository__content {
+  display: flex;
+  flex-direction: column;
+  gap: rem(4);
+}
+
+.repository__header {
+  display: flex;
+  gap: rem(16);
+}
+
+.repository__name {
+  color: $primary;
+  font: $headline2-semi-bold;
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.repository__tag {
+  font: $caption-regular;
+  padding: rem(1.5) rem(8);
+  border: 1px solid $color-border;
+  border-radius: rem(16);
+  color: $grey;
+}
+
+.repository__description {
+  color: $grey;
+}
+
+.repository__tags {
+  display: flex;
+  gap: rem(4);
+}
+
+.repository__details {
+  display: flex;
+  gap: rem(16);
+  color: $grey;
+}
+
+@media screen and (min-width: 768px) {
+  .repository {
+    flex-direction: row;
+    align-items: center;
+  }
+}
