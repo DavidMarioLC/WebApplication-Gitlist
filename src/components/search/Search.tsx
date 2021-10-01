@@ -1,10 +1,10 @@
-import {FC} from 'react'
+import {FunctionComponent} from 'react'
 
 interface Props {
   
 }
 
-const Search:FC<Props> = (props) => {
+const Search:FunctionComponent<Props> = (props) => {
   return (
     <div className="search">
       <input placeholder="Find a repository…" className="search__input" type="text" />

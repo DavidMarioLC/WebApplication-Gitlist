@@ -18,9 +18,10 @@
 @import "./components/search";
 @import "./components/selectGroup";
 @import "./components/repository";
+@import "./components/pageNotFound";
 
 @import "./layout/sidebar";
 @import "./layout/main";
 @import "./layout/repositories";
 
-@import "./pages/home.scss";
+@import "./pages/home";

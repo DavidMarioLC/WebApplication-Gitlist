@@ -1,32 +1,31 @@
-import {FC} from 'react';
+import {FunctionComponent} from 'react';
+import {User} from '../../interfaces/user.interface';
 
-interface Props {
+
+const Profile:FunctionComponent<{user:User}> = ({user:{
+  avatar_url,
+  login:nickname,
+  name,bio,followers,
+  following,
+  company,
+  location,
+  blog,
+  twitter_username
+ }}) => {
+
+  // generate stars
+  const star:number = Math.ceil(Math.random()*1000);
   
-}
-
-const Profile:FC<Props> = (props) => {
-  
-  const img:string = "https://avatars.githubusercontent.com/u/1500684?v=4";
-  const fullname:string = 'Kent C. Dodds';
-  const username:string = 'kentcdodds';
-  const biography:string = 'Destructuring React & the Static Web';
-  const followers:string = '20.8';
-  const following:string ='42';
-  const star:string = '81';
-  const city:string = 'Salt Lake City, Utah, USA';
-  const website:string = 'https://kentcdodds.com';
-  const twitter:string = '@kentcdodds';
-
   return (
     <div className="profile">
     <div className="profile__user">
       <div className="avatar">
         <figure className="avatar__image">
-          <img src={img} alt="username" title="username" width="80" height="80"  loading="lazy" />
+          <img src={avatar_url} alt="username" title="username" width="80" height="80"  loading="lazy" />
         </figure>
         <div className="avatar__info">
-        <p className="avatar__fullname">{fullname}</p>
-         <p className="avatar__username">{username}</p>
+        <p className="avatar__fullname">{name}</p>
+         <p className="avatar__username">{nickname}</p>
         </div>
       </div>
     </div>
@@ -34,11 +33,11 @@ const Profile:FC<Props> = (props) => {
           <button className="btn btn--text">Follow</button> 
     </div>
     <div className="profile__details">
-      <p className="biography">{biography}</p>
+      <p className="biography">{bio}</p>
        <div className="info">
           <a className="info__link" href="#followers">
             <i className="icon-users"></i>
-            <span className="info__value">{followers}k</span>
+            <span className="info__value">{followers}</span>
             Followers
           </a>  
           <a className="info__link" href="#Following">
@@ -53,9 +52,22 @@ const Profile:FC<Props> = (props) => {
     </div>
     <div className="profile__contact">
       <div className="contacts">
-        <p className="contacts__item"><i className="icon-pingMap"></i> <span>{city}</span></p>
-        <p className="contacts__item" ><i className="icon-link"></i> <a className="contacts__link" href="#c2">{website}</a></p>
-        <p className="contacts__item" ><i className="icon-twitter"></i> <a className="contacts__link" href="#c3">{twitter}</a></p>
+      <p className="contacts__item">
+          <i className="icon-pingMap"></i> 
+          <span>{company}</span>
+      </p>
+      <p className="contacts__item">
+          <i className="icon-pingMap"></i> 
+          <span>{location}</span>
+      </p>
+      <p className="contacts__item" >
+          <i className="icon-link"></i> 
+          <a className="contacts__link" href={`${blog}`}>{blog}</a>
+      </p>
+      <p className="contacts__item" >
+          <i className="icon-twitter"></i>
+          <a className="contacts__link" href={`https://twitter.com/${twitter_username}`}>@{twitter_username}</a>
+      </p>
       </div>
     </div>
   </div>

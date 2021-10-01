@@ -1,4 +1,4 @@
-import {FC} from 'react';
+import {FunctionComponent} from 'react';
 
 interface Props {
   name:string;
@@ -9,7 +9,7 @@ interface Props {
 
 }
 
-const Repository:FC<Props> = (props) => {
+const Repository:FunctionComponent<Props> = (props) => {
   return (
     <article className="repository">
               <div className="repository__content">

@@ -1,32 +1,7 @@
 import "./sass/main.scss";
-
-
+import {AppRouter} from './routes';
 function App() {
- 
-
-  return (
-  <>
-    
-    <div className="home">
-    <aside className="sidebar">
-      {/* profile */}
-     </aside>
-     <main className="main">
-        <div className="actions">
-            {/* search */}
-          <div className="selectGroup">
-            {/* select-filter */}
-          </div>
-        </div>
-        <div className="repositories">
-         {/* repository */}
-        </div>
-     </main>
-   </div>
-    
-  </>
-  
-  );
+  return <AppRouter/>
 
 }
 
