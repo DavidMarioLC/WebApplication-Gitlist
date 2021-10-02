@@ -12,7 +12,7 @@
 .repository__content {
   display: flex;
   flex-direction: column;
-  gap: rem(4);
+  gap: rem(8);
 }
 
 .repository__header {
@@ -40,6 +40,10 @@
   color: $grey;
 }
 
+.repository__actions {
+  flex-shrink: 0;
+}
+
 .repository__tags {
   display: flex;
   gap: rem(4);
@@ -48,6 +52,7 @@
 .repository__details {
   display: flex;
   gap: rem(16);
+  align-items: center;
   color: $grey;
 }
 

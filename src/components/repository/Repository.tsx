@@ -1,34 +1,49 @@
-import {FunctionComponent} from 'react';
+
+import {Owner} from "../../interfaces/repo.interface";
+import {License} from "../../interfaces/repo.interface";
+import {formatStars} from '../../utils/formatNumber';
+import {formatDate} from "../../utils/formatDate";
 
 interface Props {
   name:string;
-  tag:string;
   description:string;
-  technologiesTags:[];
-  
-
+  language:string;
+  visibility:string;
+  owner:Owner;
+  pushed_at:Date;
+  license?:License;
+  stargazers_count:number
 }
 
-const Repository:FunctionComponent<Props> = (props) => {
+
+const Repository = ({name,description,language,visibility,owner,pushed_at,license,stargazers_count}:Props) => {
+  
+
+
   return (
     <article className="repository">
               <div className="repository__content">
                <div className="repository__header">
-                 <a className="repository__name" href="#">testing-react-apps</a>
-                 <span className="repository__tag">Public</span>
+                 <a className="repository__name" href={`${owner.html_url}/${name}`} target="_blank" rel="noreferrer">{name}</a>
+                 <span className="repository__tag">{visibility}</span>
                 </div>
                 
-                <p className="repository__description">A workshop for testing react applications</p>
+                <p className="repository__description">{description}</p>
                 <div className="repository__tags">
-                  <a className="tag" href="https://github.com/">css</a>
-                  <a className="tag" href="https://github.com/">html</a>
-                  <a className="tag" href="https://github.com/">javascript</a>
-                  <a className="tag" href="https://github.com/">react</a>
-                  <a className="tag" href="https://github.com/">sass</a>
+                  <a className="tag" target="_blank" rel="noreferrer" href={'https://github.com/topics/css'}>css</a>
+                  <a className="tag" target="_blank" rel="noreferrer" href={'https://github.com/topics/html'}>html</a>
+                  <a className="tag" target="_blank" rel="noreferrer" href={'https://github.com/topics/javascript'}>javascript</a>
+                  <a className="tag" target="_blank" rel="noreferrer" href={'https://github.com/topics/reactjs'}>reactjs</a>
+                  <a className="tag" target="_blank" rel="noreferrer" href={'https://github.com/topics/sass'}>sass</a>
                 </div>
                 <div className="repository__details">
-                  <span>Javascript</span>
-                  <time>5 days ago</time>
+                  {language&&<span className={`dot dot--${language}`}></span>}
+                  {language&& <span>{language}</span>}
+                  {license &&<span>{license.name}</span> }
+                  {stargazers_count>0&&<span><i className="icon-star"></i> {formatStars(stargazers_count)}</span>}
+                  {pushed_at&&<time>{formatDate(pushed_at)}</time>}
+                 
+                 
                 </div>
               </div>  
 

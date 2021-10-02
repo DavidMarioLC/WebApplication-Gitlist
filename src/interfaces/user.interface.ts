@@ -1,5 +1,5 @@
 
-export interface User {
+export interface IUser {
 avatar_url: string;
 bio: string;
 blog: string;

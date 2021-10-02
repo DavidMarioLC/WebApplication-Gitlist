@@ -1,9 +1,9 @@
-import {User} from '../interfaces/user.interface';
-import {Repo} from "../interfaces/repo.interface";
+import {IUser} from "../interfaces/user.interface" ;
+import {IRepository} from '../interfaces/repo.interface';
 
 interface Response{
-    user:User;
-    repos:Repo[];
+    user:IUser;
+    repos:IRepository[];
     userExist:Boolean;
 }
 
@@ -28,3 +28,4 @@ export const fetchGithubApi =async (username:string):Promise<Response> => {
   
   
 }
+

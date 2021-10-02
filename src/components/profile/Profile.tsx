@@ -1,17 +1,14 @@
-import {FunctionComponent} from 'react';
-import {User} from '../../interfaces/user.interface';
-
-
-const Profile:FunctionComponent<{user:User}> = ({user:{
-  avatar_url,
-  login:nickname,
-  name,bio,followers,
-  following,
-  company,
-  location,
-  blog,
-  twitter_username
- }}) => {
+import {IUser} from '../../interfaces/user.interface';
+import {formatStars} from "../../utils/formatNumber";
+const Profile = (user:IUser) => {
+  const { avatar_url,
+    login:nickname,
+    name,bio,followers,
+    following,
+    company,
+    location,
+    blog,
+    twitter_username} = user;
 
   // generate stars
   const star:number = Math.ceil(Math.random()*1000);
@@ -37,7 +34,7 @@ const Profile:FunctionComponent<{user:User}> = ({user:{
        <div className="info">
           <a className="info__link" href="#followers">
             <i className="icon-users"></i>
-            <span className="info__value">{followers}</span>
+            <span className="info__value">{formatStars(followers)}</span>
             Followers
           </a>  
           <a className="info__link" href="#Following">
@@ -52,22 +49,31 @@ const Profile:FunctionComponent<{user:User}> = ({user:{
     </div>
     <div className="profile__contact">
       <div className="contacts">
-      <p className="contacts__item">
-          <i className="icon-pingMap"></i> 
+      {company&& 
+          <p className="contacts__item">
+          <i className="icon-link"></i> 
           <span>{company}</span>
       </p>
-      <p className="contacts__item">
-          <i className="icon-pingMap"></i> 
-          <span>{location}</span>
-      </p>
+      }
+     {
+       location &&  
+       <p className="contacts__item">
+        <i className="icon-pingMap"></i> 
+        <span>{location}</span>
+        </p>
+     }
+      {blog&&
       <p className="contacts__item" >
           <i className="icon-link"></i> 
           <a className="contacts__link" href={`${blog}`}>{blog}</a>
       </p>
+      }
+     {twitter_username&&
       <p className="contacts__item" >
-          <i className="icon-twitter"></i>
-          <a className="contacts__link" href={`https://twitter.com/${twitter_username}`}>@{twitter_username}</a>
+      <i className="icon-twitter"></i>
+      <a className="contacts__link" href={`https://twitter.com/${twitter_username}`}>@{twitter_username}</a>
       </p>
+     }
       </div>
     </div>
   </div>
