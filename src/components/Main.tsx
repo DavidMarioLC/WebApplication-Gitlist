@@ -10,7 +10,7 @@ import Repositories from "./repositories/Repositories"
 import NotFound from "./404/NotFound";
 
 const Main:FunctionComponent = () => {
-  const initialState:IUser = {
+  const userInitialState:IUser = {
     avatar_url: '',
     bio: '',
     blog: '',
@@ -43,23 +43,20 @@ const Main:FunctionComponent = () => {
   
   }
 
-
-
   const {username} = useParams<{username:string}>();
 
-  const [user, setUser] = useState<IUser>(initialState);
+  const [user, setUser] = useState<IUser>(userInitialState);
   const [loading,setLoading] = useState<boolean>(true);
   const [notFound,setNotFound] = useState<boolean>(false);
   const [repositories,setRepositories] = useState<IRepository[]>([]);
-
-  
+  const [repoFiltered,setRepoFiltered] = useState<IRepository[]>([]);
+  const [searchName,setSearchName] = useState<string>('');
 
  useEffect( () => {   
  
   const fetchApi = async () => {
     const {user,repos,userExist} = await fetchGithubApi(username);
      
-
     if(userExist){
       setUser(user)
       setNotFound(false)
@@ -69,8 +66,8 @@ const Main:FunctionComponent = () => {
     else{
       setLoading(false)
       setNotFound(true)
-      console.log('loading activo');
     }
+
    }
 
    fetchApi();
@@ -88,14 +85,18 @@ const Main:FunctionComponent = () => {
      </aside>
      <main className="main">
         <div className="actions">
-            <Search/>
+            <Search
+              repositories={repositories}
+              searchName={searchName}
+              setSearchName={setSearchName} 
+              setRepoFiltered={setRepoFiltered}/>
           <div className="selectGroup">
            
             <Select/>
           </div>
         </div>
         {/*  */}
-        <Repositories repositories={repositories}  />
+        <Repositories repositories={searchName.length< 1? repositories : repoFiltered }  />
      </main>
    </div>
     </Fragment>

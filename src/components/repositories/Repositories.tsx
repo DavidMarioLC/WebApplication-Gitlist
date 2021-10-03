@@ -8,6 +8,10 @@ interface Props{
 
 const Repositories = ({repositories}:Props) => {
 
+    
+
+
+    if(repositories.length===0) return <h2>user doesn't have any public repositories yet.</h2>
     return (
     <div  className="repositories">
       {

@@ -50,6 +50,7 @@
 }
 
 .repository__details {
+  font: $caption-small;
   display: flex;
   gap: rem(16);
   align-items: center;

@@ -10,8 +10,7 @@ const Profile = (user:IUser) => {
     blog,
     twitter_username} = user;
 
-  // generate stars
-  const star:number = Math.ceil(Math.random()*1000);
+
   
   return (
     <div className="profile">
@@ -43,7 +42,7 @@ const Profile = (user:IUser) => {
             </a> 
           <a className="info__link" href="#stars">
             <i className="icon-star"></i>
-            <span className="info__value">{star}</span>
+            <span className="info__value">{78}</span>
           </a>
        </div>
     </div>

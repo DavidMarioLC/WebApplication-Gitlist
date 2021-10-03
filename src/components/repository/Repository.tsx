@@ -18,8 +18,6 @@ interface Props {
 
 const Repository = ({name,description,language,visibility,owner,pushed_at,license,stargazers_count}:Props) => {
   
-
-
   return (
     <article className="repository">
               <div className="repository__content">
@@ -41,7 +39,7 @@ const Repository = ({name,description,language,visibility,owner,pushed_at,licens
                   {language&& <span>{language}</span>}
                   {license &&<span>{license.name}</span> }
                   {stargazers_count>0&&<span><i className="icon-star"></i> {formatStars(stargazers_count)}</span>}
-                  {pushed_at&&<time>{formatDate(pushed_at)}</time>}
+                  {pushed_at&&<time>Updated {formatDate(pushed_at)}</time>}
                  
                  
                 </div>

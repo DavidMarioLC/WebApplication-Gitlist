@@ -26,6 +26,7 @@ $body2-regular: 400 0.875rem/1.5rem $font;
 $body2-semi-bold: 600 0.875rem/1.5rem $font;
 $caption-regular: 500 0.75rem/1.125rem $font;
 $caption-medium: 500 0.75rem/1.125rem $font;
+$caption-small: 400 0.75rem/1.5rem $font;
 
 :root {
   --primary: #{$primary};
@@ -52,6 +53,7 @@ $caption-medium: 500 0.75rem/1.125rem $font;
   --body2-semi-bold: #{$body2-semi-bold};
   --caption-regular: #{$caption-regular};
   --caption-medium: #{$caption-medium};
+  --caption-small: #{$caption-small};
 }
 
 body {
